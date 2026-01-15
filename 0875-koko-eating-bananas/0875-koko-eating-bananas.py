@@ -4,7 +4,7 @@ class Solution(object):
         def can_finish(speed):
             hours_needed = 0
             for p in piles:
-                hours_needed += (p + speed - 1)// speed
+                hours_needed += ((p + speed - 1)// speed)
 
             return hours_needed <= h
 
@@ -12,17 +12,19 @@ class Solution(object):
         right = max(piles)
         res = right
 
-        while left <= right:
-            mid = (left+right) // 2
-
+        while left < right:
+            mid = (left+right)//2
 
             if can_finish(mid):
                 res = mid
-                right = mid - 1
+                right = mid 
+
             else:
                 left = mid + 1
 
         return res
+
+        
 
 
             
