@@ -1,5 +1,5 @@
 class Solution:
-    def findDegree(self, matrix):
+    def findDegrees(self, matrix):
         n = len(matrix)
         ans = []
 
