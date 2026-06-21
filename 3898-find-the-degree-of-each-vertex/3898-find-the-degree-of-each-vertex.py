@@ -4,7 +4,6 @@ class Solution:
         ans = []
 
         for i in range(n):
-            degree = sum(matrix[i])
-            ans.append(degree)
-
+            sumed = sum(matrix[i])
+            ans.append(sumed)
         return ans
