@@ -1,9 +1,12 @@
+from collections import defaultdict
 class Solution:
     def countKDifference(self, nums: List[int], k: int) -> int:
-        count = 0
-        for i in range(len(nums)):
-            for j in range(len(nums)):
-                if (abs(nums[i]) - abs(nums[j]) == k):
-                    count += 1
+        freq = defaultdict(int)
+        ans = 0
 
-        return count
+        for num in nums:
+            ans += freq[num + k]
+            ans += freq[num-k]
+            freq[num] += 1
+
+        return ans
