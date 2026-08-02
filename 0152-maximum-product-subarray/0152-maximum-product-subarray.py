@@ -1,20 +1,15 @@
 class Solution(object):
     def maxProduct(self, nums):
-        curr_max = curr_min = ans = nums[0]
+        res = nums[0]
+        curr_max = curr_min = num = nums[0]
 
         for i in range(1,len(nums)):
-            num = nums[i]
+            if nums[i] < 0:
+                curr_max, curr_min = curr_min, curr_max
 
-            if num < 0:
-                curr_max,curr_min = curr_min,curr_max
+            curr_max = max(nums[i]*curr_max, nums[i])
+            curr_min = min(nums[i]*curr_min, nums[i])
 
+            res = max(curr_max,res)
 
-            curr_max = max(num, curr_max*num)
-            curr_min = min(num, curr_min*num)
-
-            ans = max(curr_max,ans)
-
-        return ans
-
-
-        
+        return res
