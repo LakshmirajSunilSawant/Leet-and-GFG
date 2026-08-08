@@ -19,4 +19,3 @@ class Solution(object):
                 longest = p2
 
         return longest
-        
