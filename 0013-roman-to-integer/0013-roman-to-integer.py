@@ -12,4 +12,3 @@ class Solution:
             prev_val = curr_val
 
         return tot
-
