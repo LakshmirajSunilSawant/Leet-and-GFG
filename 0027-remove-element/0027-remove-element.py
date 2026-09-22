@@ -1,5 +1,6 @@
-class Solution(object):
-    def removeElement(self, nums, val):
+
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
         n = 0
         for num in nums:
             if num != val:
