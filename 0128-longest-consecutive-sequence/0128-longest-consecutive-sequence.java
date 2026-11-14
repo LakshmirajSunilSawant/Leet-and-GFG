@@ -3,30 +3,32 @@ class Solution {
         HashSet<Integer> set = new HashSet<>();
 
         int longest = 0;
-        
-        for (int num:nums){
-            set.add(num);
+
+        if(nums.length == 0){
+            return 0;
+        }
+
+        for (int i = 0; i < nums.length; i++){
+            set.add(nums[i]);
         }
 
         for (int num:set){
-            if(!set.contains(num-1)){
-                int curr = num;
-                int length = 1;
-
-
-                while (set.contains(curr+1)){
-                    curr++;
-                    length++;
-                }
-
-                
-            longest = Math.max(longest, length);
+            if (set.contains(num-1)){
+                continue;
             }
-            
-
-
+            else{
+                int currnum = num;
+                int currsub = 1;
+                while (set.contains(currnum+1)){
+                    currnum++;
+                    currsub++;
+                }
+                longest = Math.max(longest,currsub);
+            }
         }
+        
         return longest;
+       
 
     }
 }
